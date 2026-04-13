@@ -9,25 +9,7 @@ Upload PDF or TXT documents, then ask natural language questions against them.
 
 ## Architecture
 
-```
-Client
-  │
-  ├── POST /upload ──► FastAPI ──► Background job
-  │                                    │
-  │                        extract → chunk → embed (Cohere)
-  │                                    │
-  │                               ChromaDB (persist)
-  │
-  └── POST /query ──► FastAPI
-                          │
-                    embed query (Cohere)
-                          │
-                    similarity search (ChromaDB)
-                          │
-                    build prompt + generate (Groq)
-                          │
-                     JSON response
-```
+![Architecture](docs/architecture.png)
 
 See `docs/design_decisions.md` for rationale on chunk size, a documented
 retrieval failure case, and latency metrics.
@@ -211,6 +193,7 @@ rag-qna/
 ├── requirements.txt
 ├── .env.example
 ├── docs/
-│   └── design_decisions.md   # Chunk size rationale, failure case, metrics
+│   ├── architecture.png          # System architecture diagram
+│   └── design_decisions.md       # Chunk size rationale, failure case, metrics
 └── README.md
 ```
