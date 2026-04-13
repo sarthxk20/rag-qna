@@ -197,3 +197,5 @@ rag-qna/
 │   └── design_decisions.md       # Chunk size rationale, failure case, metrics
 └── README.md
 ```
+
+
