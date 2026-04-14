@@ -17,7 +17,7 @@ CHROMA_PERSIST_DIR: str = os.getenv("CHROMA_PERSIST_DIR", "./chroma_store")
 CHROMA_COLLECTION_NAME: str = "rag_documents"
 
 # Groq
-GROQ_MODEL: str = "llama3-70b-8192"
+GROQ_MODEL: str = "llama-3.3-70b-versatile"
 GROQ_MAX_TOKENS: int = 1024
 GROQ_TEMPERATURE: float = 0.2
 
